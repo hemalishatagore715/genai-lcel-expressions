@@ -4,14 +4,29 @@
 To design and implement a LangChain Expression Language (LCEL) expression that utilizes at least two prompt parameters and three key components (prompt, model, and output parser), and to evaluate its functionality by analyzing relevant examples of its application in real-world scenarios.
 
 ### PROBLEM STATEMENT:
+To develop an LCEL-based application that generates structured content based on the user's input topic and required content length. The application should use a prompt template, a language model, and an output parser connected using the LCEL pipe operator (|).
 
 ### DESIGN STEPS:
 
-#### STEP 1:
+#### STEP 1: Define the Prompt Template
+- Import ChatPromptTemplate from LangChain.
+- Create a prompt template with three input parameters:
+    - email_content – Original email received.
+    - tone – Required tone of the reply.
+    - objective – Purpose of the reply.
+- Provide instructions to generate a professional email response.
 
-#### STEP 2:
+#### STEP 2: Initialize the Language Model
+- Import FakeListChatModel from LangChain.
+- Initialize the model with predefined email responses.
+- Use predefined responses to simulate the email reply generation process without requiring an external API key.
 
-#### STEP 3:
+#### STEP 3: Create the LCEL Chain and Generate Output
+- Initialize StrOutputParser() to convert the model response into plain text.
+- Connect the prompt, model, and output parser using the LCEL pipe (|) operator.
+- Pass the original email, required tone, and reply objective using chain.invoke().
+- Display the generated email reply.
+
 
 ### PROGRAM:
 
@@ -56,9 +71,9 @@ response = chain.invoke({
 print("Generated Email Reply:")
 print(response)
 ```
-```
 
 ### OUTPUT:
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6208beef-cdc9-4f82-ae4e-1cf39b836c55" />
 
 ### RESULT:
+Thus, the LangChain Expression Language (LCEL) expression was successfully designed and implemented using three input parameters (email_content, tone, and objective) and three key components: Prompt, Model, and Output Parser. The components were connected using the LCEL pipe (|) operator to generate a professional email reply based on the given input.
